@@ -1,0 +1,59 @@
+.center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 490px
+    background-color: white
+    border-radius: 10px
+    padding: 30px
+
+.form
+    display: block
+    margin: 35px 0
+    box-sizing: border-box
+    background: white
+    border:1px solid black
+    padding: 50px 40px
+    border-radius: 10px
+    width:50%
+
+.welcomeHeading
+    font-size: 50px
+    color: #367e95
+
+h2
+    color: #367e95  
+
+form label
+    margin: 5px
+    font-size: 22px
+    color: #367e95  
+
+form input
+    margin: 5px
+    padding: 3px 5px
+
+form h4
+    margin: 5px
+    font-size: 14px
+    color: red
+
+.button 
+    padding: 13px 32px
+
+.right-side
+    flex:7
+
+.poster
+    flex:5
+    width: 100%
+    height: 100%
+
+.poster img
+    height: 90%
+    width: 100%
+    padding: 5px
+    border-radius: 5px
+
+

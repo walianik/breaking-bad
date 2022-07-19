@@ -1,0 +1,15 @@
+<div class="center">
+    <h1 class="welcomeHeading">Welcome</h1>
+    <h2>Please Login to shop</h2>
+
+    <form class="form" [formGroup]="loginForm">
+        <label for="email">Email I'd : </label>
+        <input type="email" [formControl]="email" id="email">
+        <br>
+        <h4 [hidden]="email.valid || email.untouched">Enter correct Email format!</h4>
+        <label for="password">Password:</label>
+        <input type="password" [formControl]="password" id="password">
+        <h4 [hidden]="password.valid || password.untouched">Password is required and must contain 1 special character,1 number, 1 capital letter and should be more than 8 characters!</h4>
+    </form>
+    <button class="button" [disabled]="loginForm.invalid" (click)="Login()">Login</button>
+</div>

@@ -1,0 +1,49 @@
+<!-- <h1>{{characters[0].name}}</h1> -->
+<!-- <div class="container">
+    <div class="card" *ngFor="let character of characters">
+            <img [src]="character.img" alt="Avatar" style="width:100%;height: 50%;">
+            <div class="container">
+            <h4><b>{{character.name}}</b></h4>
+            <p>Architect & Engineer</p>
+            </div>
+    </div>
+</div> -->
+<!-- <div class="container" >
+    <div class="card" >
+        <div class="card-image">
+            <img src="../../../assets/breaking.png" alt="">
+        </div>
+        <h2>hello</h2>
+        <p>great</p>
+        <a href="">Read more</a>
+    </div>
+    <div class="card" >
+        <div class="card-image">
+            <img src="../../../assets/breaking.png" alt="">
+        </div>
+        <h2>hello</h2>
+        <p>great</p>
+        <a href="">Read more</a>
+    </div>
+    <div class="card" >
+        <div class="card-image">
+            <img src="../../../assets/breaking.png" alt="">
+        </div>
+        <h2>hello</h2>
+        <p>great</p>
+        <a href="">Read more</a>
+    </div>
+</div> -->
+<!-- <input type="text" [(ngModel)]="filterValue"> -->
+
+<div class="gallery">
+    <div class="content" *ngFor="let character of characters | filter:filterValue">
+        <img [src]="character.img" alt="">
+        <h3>{{character.name}}</h3>
+        <p>{{character.status}}</p>
+        <h6>{{character.birthday}}</h6>
+        <button (click)="seeMore(character)">See more</button>
+    </div>
+</div>
+
+
