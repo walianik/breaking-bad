@@ -12,7 +12,9 @@ export class HomeComponent implements OnInit {
   @Output() more=new EventEmitter<boolean>()
   characters!:any;
   selected:any[]=[]
-  likeCount!:any
+  index:any
+  likeCount:number=0
+  obj:any=[]
   constructor(private charServ:CharactersFetchService, private dataServ:DataServiceService) {
    }
   filterValue:string='';
@@ -20,27 +22,37 @@ export class HomeComponent implements OnInit {
     let data= localStorage.getItem('data');
     if(!data){ 
       console.log('if');
-    this.charServ.getProducts().subscribe(data=>{
+      this.charServ.getProducts().subscribe(data=>{
       this.characters=data
       console.log(this.characters);
       console.log(typeof data);
       localStorage.setItem('data',JSON.stringify(data))
 
     })
-  }
-  else{
-    var data1 =JSON.parse(data)
-    this.characters=data1
-  }
+      }
+      else{
+        var data1 =JSON.parse(data)
+        this.characters=data1
+      }
     this.dataServ._subject.subscribe(element=>{
       this.filterValue=element
-      
     })
+    for(let i=0;i<this.characters.length;i++){
+      this.characters[i].likeBy=0
+    }    
+    console.log(this.characters);
+    
   }
   seeMore(character:any){
     let see=true;
     this.more.emit(see)
     this.selected.push(character)
     this.dataServ._seeMore.next(this.selected)
+  }
+  like(i:any){
+    console.log('hii');
+    let array=document.getElementsByClassName(i)
+    array[0].classList.add('fa-heart-add')
+    this.characters[i].likeBy++   
   }
 }
