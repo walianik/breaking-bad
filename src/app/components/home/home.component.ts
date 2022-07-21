@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
     this.likeKrega=!this.likeKrega
     console.log(this.likeKrega);
     
-    if(this.likeKrega==true){
+    if(this.characters[i].likeBy==0){
     let array=document.getElementsByClassName(i)
     array[0].classList.add('fa-heart-add')
     this.characters[i].likeBy++
@@ -62,7 +62,9 @@ export class HomeComponent implements OnInit {
       array[0].classList.remove('fa-heart-add')
       this.characters[i].likeBy--
     }
+    
+    // this.characters[i].likeBy++ 
     console.log(this.characters[i]);
-    // this.characters[i].likeBy++   
+      
   }
 }
