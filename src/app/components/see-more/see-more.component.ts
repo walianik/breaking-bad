@@ -16,8 +16,8 @@ export class SeeMoreComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataServ._seeMore.subscribe((data)=>{
-       console.log(data);
-       console.log(data[0].likeBy);
+      console.log(data);
+      console.log(data[0].likeBy);
       this.character=data
       this.likeCount=data[0].likeBy
     })

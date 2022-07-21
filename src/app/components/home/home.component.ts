@@ -12,9 +12,7 @@ export class HomeComponent implements OnInit {
   @Output() more=new EventEmitter<boolean>()
   characters!:any;
   selected:any[]=[]
-  index:any
-  likeCount:number=0
-  obj:any=[]
+  likeKrega:any=false
   constructor(private charServ:CharactersFetchService, private dataServ:DataServiceService) {
    }
   filterValue:string='';
@@ -50,9 +48,21 @@ export class HomeComponent implements OnInit {
     this.dataServ._seeMore.next(this.selected)
   }
   like(i:any){
-    console.log('hii');
+    // console.log('hii');
+    this.likeKrega=!this.likeKrega
+    console.log(this.likeKrega);
+    
+    if(this.likeKrega==true){
     let array=document.getElementsByClassName(i)
     array[0].classList.add('fa-heart-add')
-    this.characters[i].likeBy++   
+    this.characters[i].likeBy++
+    }
+    else{
+      let array=document.getElementsByClassName(i)
+      array[0].classList.remove('fa-heart-add')
+      this.characters[i].likeBy--
+    }
+    console.log(this.characters[i]);
+    // this.characters[i].likeBy++   
   }
 }
